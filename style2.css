@@ -1,0 +1,54 @@
+
+.navbar > ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+.navbar{
+    background-color: aqua;
+    padding: 1px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.navbar > ul >li{
+    padding: 10px;
+    float: left;
+    
+    border: 1px solid aqua;
+    
+
+}
+.navbar > ul > li{
+    width: 10%;
+}
+.lnavbar ul > li{
+    float: right;
+    list-style-type: none;
+    padding: 5px;
+    border-radius: 50%;
+    border-color: black;
+    border: 1px solid black;
+    background-color: white;
+
+
+}
+.bar{
+    padding:5px;
+    background-color: aqua;
+    float: left;
+    width: 100%;
+}
+.bar>ul>li{
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+   border-width: 5px;
+
+}

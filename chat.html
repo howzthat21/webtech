@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Example</title>
+    <script>
+        function validateForm() {
+            // Get references to form elements
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var passInput= document.getElementById("pass");
+            var cpassInput = document.getElementById("cpass");
+            
+            // Get values from input fields
+            var name = nameInput.value;
+            var email = emailInput.value;
+            var pass = passInput.value;
+            var cpass = cpassInput.value;
+            
+            // Simple validation checks
+            if (name === "") {
+                alert("Name field is required.");
+                return false;
+            }
+            
+            if (email === "") {
+                alert("Email field is required.");
+                return false;
+            } else if (!isValidEmail(email)) {
+                alert("Invalid email format.");
+                return false;
+            }
+            if(pass===""){
+                alert("password is too short");
+                return false;
+            } else if(!validpass(pass)){
+                alert("must contain special chars:");
+                return false;
+           }
+            if(cpass===""){
+                alert("confirm password");
+                return false;
+            }
+           if(pass.length<8){
+            alert("password length must be 8 char long");
+            return false;
+           }
+           if(pass!==cpass){
+            alert("pass does not match");
+            return false;
+           }
+           
+
+           
+            
+            // All checks passed, form is valid
+            return true;
+        }
+        
+        function isValidEmail(email) {
+            // Basic email format validation using regular expression
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+        function validpass(pass){
+            var passpattern=/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+            return passpattern.test(pass);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateForm();" method="post" action="lab7.html">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <label for="pass">Enter your password</label>
+        <input type="password" name="pass" id="pass"><br><br>
+
+        <label for="cpass">Confirm your password</label>
+        <input type="password" name="cpass" id="cpass">
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
